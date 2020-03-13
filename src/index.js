@@ -2,6 +2,9 @@
 // window.GameView = GameView;
 import Char from "./char";
 import Bowser from "./bowser";
+import Ant from "./ant";
+import Wolf from "./wolf";
+import Rock from "./rock";
 // import "../stylesheets/index.css";
 
 let canvas = document.createElement("canvas"); canvas.className="canvas";
@@ -17,18 +20,26 @@ let lavaFloor = new Image();
 lavaFloor.src = "./Dungeon_A5.png";
 let grass = new Image(); 
 grass.src = "./Dungeon_A4.png";
+
 let charImage = new Image(); 
 charImage.src = "cindyschar.png";
 let char = new Char();
-let wolf = new Image(); 
-wolf.src = "wolf.png";
+
+let wolf = new Wolf();
+let wolfImage = new Image(); 
+wolfImage.src = "wolf.png";
+
 let bowser = new Bowser();
 let bowserImage = new Image(); 
 bowserImage.src = "bowser.png";
-let ant = new Image(); 
-ant.src = "ant.png";
-let rock = new Image(); 
-rock.src = "Dungeon_B.png";
+
+let ant = new Ant();
+let antImage = new Image(); 
+antImage.src = "ant.png";
+
+let rock = new Rock();
+let rockImage = new Image(); 
+rockImage.src = "Dungeon_B.png";
 // ctx.strokeStyle = 'black';
 // ctx.strokeRect(380, 90, 615,500);
 // (x, y, width, height)
@@ -54,47 +65,59 @@ function drawBackground(){
 }
 
 function drawChar(){
-  ctx.drawImage(wolf, 5, 10, 120, 60, 50, 285, 90, 50)
-  ctx.drawImage(wolf, 5, 10, 120, 60, 260, 285, 90, 50)
-  ctx.drawImage(wolf, 5, 10, 120, 60, 480, 285, 90, 50)
-  ctx.drawImage(ant, 0, 0, 30, 20, 0, 340, 60, 50)
-  ctx.drawImage(ant, 0, 0, 30, 20, 260, 340, 60, 50)
-  ctx.drawImage(ant, 0, 0, 30, 20, 520, 340, 60, 50)
+  ctx.drawImage(wolfImage, 5, 10, 120, 60, wolf.posX, wolf.posY, 90, 50)
+  ctx.drawImage(wolfImage, 5, 10, 120, 60, wolf.posX + 250, wolf.posY, 90, 50)
+  ctx.drawImage(wolfImage, 5, 10, 120, 60, wolf.posX + 500, wolf.posY, 90, 50)
+  ctx.drawImage(antImage, 0, 0, 30, 20, ant.posX, ant.posY, 60, 50)
+  ctx.drawImage(antImage, 0, 0, 30, 20, ant.posX + 260, ant.posY, 60, 50)
+  ctx.drawImage(antImage, 0, 0, 30, 20, ant.posX+520, ant.posY, 60, 50)
   ctx.drawImage(bowserImage, 0, 90, 80, 80, bowser.posX+270, bowser.posY, 60, 50)
   ctx.drawImage(bowserImage, 0, 90, 80, 80, bowser.posX + 540, bowser.posY, 60, 50)
   ctx.drawImage(bowserImage, 0, 90, 80, 80, bowser.posX, bowser.posY, 60, 50)
-  ctx.drawImage(rock, 480, 100, 45, 40, 0, 75, 35, 35) //33
-  ctx.drawImage(rock, 480, 100, 45, 40, 33, 75, 35, 35)
-  ctx.drawImage(rock, 480, 100, 45, 40, 66, 75, 35, 35)
-  ctx.drawImage(rock, 480, 100, 45, 40, 190, 75, 35, 35) //144
-  ctx.drawImage(rock, 480, 100, 45, 40, 220, 75, 35, 35)
-  ctx.drawImage(rock, 480, 100, 45, 40, 250, 75, 35, 35) //420
-  ctx.drawImage(rock, 480, 100, 45, 40, 420, 75, 35, 35)//189
-  ctx.drawImage(rock, 480, 100, 45, 40, 450, 75, 35, 35)
-  ctx.drawImage(rock, 480, 100, 45, 40, 480, 75, 35, 35)
-  ctx.drawImage(rock, 480, 100, 45, 40, 110, 120, 35, 35)
-  ctx.drawImage(rock, 480, 100, 45, 40, 143, 120, 35, 35)
-  ctx.drawImage(rock, 480, 100, 45, 40, 320, 120, 35, 35)
-  ctx.drawImage(rock, 480, 100, 45, 40, 353, 120, 35, 35)
-  ctx.drawImage(rock, 480, 100, 45, 40, 520, 120, 35, 35)
-  ctx.drawImage(rock, 480, 100, 45, 40, 553, 120, 35, 35)
-  ctx.drawImage(rock, 480, 100, 45, 40, 0, 175, 35, 35)
-  ctx.drawImage(rock, 480, 100, 45, 40, 33, 175, 35, 35)
-  ctx.drawImage(rock, 480, 100, 45, 40, 66, 175, 35, 35)
-  ctx.drawImage(rock, 480, 100, 45, 40, 190, 175, 35, 35)
-  ctx.drawImage(rock, 480, 100, 45, 40, 220, 175, 35, 35)
-  ctx.drawImage(rock, 480, 100, 45, 40, 250, 175, 35, 35)
-  ctx.drawImage(rock, 480, 100, 45, 40, 420, 175, 35, 35)
-  ctx.drawImage(rock, 480, 100, 45, 40, 450, 175, 35, 35)
-  ctx.drawImage(rock, 480, 100, 45, 40, 480, 175, 35, 35)
-  ctx.drawImage(rock, 478, 720, 45, 45, 10, 235, 35, 35) //skeleton
+
+  ctx.drawImage(rockImage, 480, 100, 45, 40, 0, 75, 35, 35) //33
+  ctx.drawImage(rockImage, 480, 100, 45, 40, 33, 75, 35, 35)
+  ctx.drawImage(rockImage, 480, 100, 45, 40, 66, 75, 35, 35)
+
+  ctx.drawImage(rockImage, 480, 100, 45, 40, 190, 75, 35, 35) //144
+  ctx.drawImage(rockImage, 480, 100, 45, 40, 220, 75, 35, 35)
+  ctx.drawImage(rockImage, 480, 100, 45, 40, 250, 75, 35, 35) //420
+
+  ctx.drawImage(rockImage, 480, 100, 45, 40, 420, 75, 35, 35)//189
+  ctx.drawImage(rockImage, 480, 100, 45, 40, 450, 75, 35, 35)
+  ctx.drawImage(rockImage, 480, 100, 45, 40, 480, 75, 35, 35)
+
+  ctx.drawImage(rockImage, 480, 100, 45, 40, 110, 120, 35, 35)
+  ctx.drawImage(rockImage, 480, 100, 45, 40, 143, 120, 35, 35)
+
+  ctx.drawImage(rockImage, 480, 100, 45, 40, 320, 120, 35, 35)
+  ctx.drawImage(rockImage, 480, 100, 45, 40, 353, 120, 35, 35)
+
+  ctx.drawImage(rockImage, 480, 100, 45, 40, 520, 120, 35, 35)
+  ctx.drawImage(rockImage, 480, 100, 45, 40, 553, 120, 35, 35)
+
+  ctx.drawImage(rockImage, 480, 100, 45, 40, 0, 175, 35, 35)
+  ctx.drawImage(rockImage, 480, 100, 45, 40, 33, 175, 35, 35)
+  ctx.drawImage(rockImage, 480, 100, 45, 40, 66, 175, 35, 35)
+
+  ctx.drawImage(rockImage, 480, 100, 45, 40, 190, 175, 35, 35)
+  ctx.drawImage(rockImage, 480, 100, 45, 40, 220, 175, 35, 35)
+  ctx.drawImage(rockImage, 480, 100, 45, 40, 250, 175, 35, 35)
+
+  ctx.drawImage(rockImage, 480, 100, 45, 40, 420, 175, 35, 35)
+  ctx.drawImage(rockImage, 480, 100, 45, 40, 450, 175, 35, 35)
+  ctx.drawImage(rockImage, 480, 100, 45, 40, 480, 175, 35, 35)
+
+  ctx.drawImage(rockImage, 478, 720, 45, 45, 10, 235, 35, 35) //skeleton
   ctx.drawImage(charImage, 0, 3, 50, 50, char.posX, char.posY, 45, 45)
 }
 
 function draw(){
   ctx.clearRect(0,0, canvas.width, canvas.height);
-  char.moveSprite(5, 5, canvas);
+  char.moveSprite(4, 4, canvas);
   bowser.moveSprite(-2, 0, canvas);
+  ant.moveSprite(2,0, canvas);
+  wolf.moveSprite(-2, 0, canvas);
   drawBackground();
   drawChar();
   requestAnimationFrame(draw);
