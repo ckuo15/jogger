@@ -7,6 +7,8 @@ class Char {
     this.dy = 0;
     this.posX = 50;
     this.posY = 460;
+    this.width = 45;
+    this.height = 45;
     this.keydownListener = this.keydownListener.bind(this);
     this.keyupListener = this.keyupListener.bind(this);
     window.addEventListener("keydown", this.keydownListener, false);
@@ -27,13 +29,13 @@ class Char {
   }
 
   moveSprite(dx, dy, canvas){
-    if (this.keyPresses["w"]){
+    if (this.keyPresses["w"] || this.keyPresses["W"]){
       this.dy = -(dy)
-    } else if (this.keyPresses["s"]){
+    } else if (this.keyPresses["s"] || this.keyPresses["S"]){
       this.dy = dy
-    } else if (this.keyPresses["a"]){
+    } else if (this.keyPresses["a"] || this.keyPresses["A"]){
       this.dx = -(dx)
-    } else if (this.keyPresses["d"]){
+    } else if (this.keyPresses["d"] || this.keyPresses["D"]){
       this.dx = dx
     }
     if (this.posX + this.dx > 0 && this.posX + 55 + this.dx < 630 && this.posX + 55 + this.dx > 0){

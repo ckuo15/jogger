@@ -4,6 +4,7 @@ class middleRock {
     this.dy = 0;
     this.posX = 110;
     this.posY = 120;
+    this.width = 70;
   }
 
   moveSprite(dx, dy, canvas) {

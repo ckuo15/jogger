@@ -6,6 +6,19 @@ body {
   background: black;
 }
 
-p{
+.middle{
+  display: flex;
+  flex-direction: row;
+}
+
+.title{
+  background: yellow;
+  border: 1px solid yellow;
+  border-radius: 50%;
+  padding: 20px;
+}
+
+.description{
   background: white;
+  padding: 10px;
 }
