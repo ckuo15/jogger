@@ -1,24 +1,31 @@
 body {
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
   background: black;
+  margin-top: 100px;
 }
 
-.middle{
+.right{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 
 .title{
+  width: 50px;
   background: yellow;
   border: 1px solid yellow;
   border-radius: 50%;
   padding: 20px;
+  text-align: center;
+  display: flex;
 }
 
 .description{
   background: white;
   padding: 10px;
+  width: 150px;
+}
+
+.middle-right{
+  background: white;
 }
