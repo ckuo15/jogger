@@ -17,6 +17,7 @@ document.body.appendChild(canvas);
 
 let enemies= [];
 let isDead = false;
+let hasWon = false;
 
 let lava = new Image(); 
 // enemies.push(lava);
@@ -75,12 +76,12 @@ function populate(){
   bullet1 = new bullet(400, 150);
   bullet2 = new bullet(100, 100);
   bullet3 = new bullet(200, 130);
-  bullet4 = new bullet(400, 110);
+  bullet4 = new bullet(250, 110);
   bullet5 = new bullet(350, 80);
 
 
   enemies = [];
-  enemies.push(wolf1, wolf2, wolf3, bowser1, bowser2, bowser3, ant1, ant2, ant3);
+  enemies.push(wolf1, wolf2, wolf3, bowser1, bowser2, bowser3, ant1, ant2, ant3, bullet1, bullet2, bullet3, bullet4, bullet5);
 }
 
 function drawBackground(){
@@ -135,6 +136,15 @@ function lavaCollision(){
 function gameOver(){
   isDead = true;
 };
+
+function gameWon(){
+  let charBottom = char.posY;
+
+  if (charBottom < 60 && charBottom > 0){
+    hasWon = true;
+    console.log("you won!")
+  }
+}
 
 // function onRock(){
 
@@ -313,20 +323,20 @@ function renderRocks() {
 function draw(){
   ctx.clearRect(0,0, canvas.width, canvas.height);
   char.moveSprite(4, 4, canvas);
-  // bowser1.moveSprite(-2, 0, canvas);
-  // bowser2.moveSprite(-2, 0, canvas);
-  // bowser3.moveSprite(-2, 0, canvas);
-  // ant1.moveSprite(2,0, canvas);
-  // ant2.moveSprite(2, 0, canvas);
-  // ant3.moveSprite(2, 0, canvas);
-  // wolf1.moveSprite(-2, 0, canvas);
-  // wolf2.moveSprite(-2, 0, canvas);
-  // wolf3.moveSprite(-2, 0, canvas);
-  // bullet1.moveSprite(5,0,canvas);
-  // bullet2.moveSprite(3, 0, canvas);
-  // bullet3.moveSprite(5, 0, canvas);
-  // bullet4.moveSprite(5, 0, canvas);
-  // bullet5.moveSprite(5, 0, canvas);
+  bowser1.moveSprite(-2, 0, canvas);
+  bowser2.moveSprite(-2, 0, canvas);
+  bowser3.moveSprite(-2, 0, canvas);
+  ant1.moveSprite(2,0, canvas);
+  ant2.moveSprite(2, 0, canvas);
+  ant3.moveSprite(2, 0, canvas);
+  wolf1.moveSprite(-2, 0, canvas);
+  wolf2.moveSprite(-2, 0, canvas);
+  wolf3.moveSprite(-2, 0, canvas);
+  bullet1.moveSprite(5,0,canvas);
+  bullet2.moveSprite(3, 0, canvas);
+  bullet3.moveSprite(2, 0, canvas);
+  bullet4.moveSprite(4, 0, canvas);
+  bullet5.moveSprite(5, 0, canvas);
   // bulletImage.moveSprite(-2, 0, canvas);
   // rock.moveSprite(2,0, canvas);
   // middlerock.moveSprite(-2,0,canvas);
@@ -335,6 +345,7 @@ function draw(){
   drawChar();
   collision();
   lavaCollision();
+  gameWon();
   requestAnimationFrame(draw)
   if (isDead) {
     isDead = false;
