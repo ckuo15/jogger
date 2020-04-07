@@ -17,6 +17,7 @@ class Char {
 
   keydownListener(event){
     this.keyPresses[event.key] = true;
+    console.log(this.posX, this.posY)
     // debugger;
     // console.log("down")
   }

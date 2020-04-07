@@ -80,7 +80,7 @@ function populate(){
 
 
   enemies = [];
-  enemies.push(wolf1, wolf2, wolf3, bowser1, bowser2, bowser3, ant1, ant2, ant3, bullet1, bullet2, bullet3, bullet4, bullet5);
+  enemies.push(wolf1, wolf2, wolf3, bowser1, bowser2, bowser3, ant1, ant2, ant3);
 }
 
 function drawBackground(){
@@ -117,20 +117,19 @@ function collision(){
 }
 
 function lavaCollision(){
+  // if char.posY is between 63-176
+  // posX = 80-513
   let charLeft = char.posX;
   let charBottom = char.posY;
-  let charRight = charLeft + char.width;
+  let charRight = charLeft + char.width-10;
   let charTop = charBottom + char.height;
-  rockArr.forEach(rock => {
-    if (charLeft < rock.posX + rock.width &&
-      charRight > rock.posX &&
-      charBottom < rock.posY + rock.height &&
-      charTop > rock.posY
-    ) {
+  
+  if (charBottom > 63 && charBottom < 176){
+    if (charLeft > 80 && charRight < 135 || charLeft > 297 && charRight < 352 || charLeft > 513 && charRight < 568 ){
+    } else {
       gameOver();
-      return true;
     }
-  })
+  } 
 }
 
 function gameOver(){
@@ -240,48 +239,61 @@ function drawChar(){
   // ctx.drawImage(rockImage, 480, 100, 45, 40, rock.posX +563, rock.posY + 100, 35, 35)
 
   // ctx.drawImage(rockImage, 478, 720, 45, 45, 10, 235, 35, 35) //skeleton
-  ctx.drawImage(charImage, 0, 3, 50, 50, char.posX, char.posY, 45, 45)
+  ctx.drawImage(charImage, 0, 0, 48, 48, char.posX, char.posY, 45, 45)
+  // ctx.beginPath();
+  // ctx.rect(char.posX, char.posY, 45, 45);
+  // ctx.stroke();
 }
-
+// y = 63-176
 const ROCKS = [
-  { pos: [80, 176] },
-  { pos: [80, 147] },
-  { pos: [50, 147] },
-  { pos: [110, 147] },
-  { pos: [140, 147] },
-  { pos: [140, 118] },
-  { pos: [140, 90] },
-  { pos: [110, 90] },
+  { pos: [80, 155] },
+  { pos: [80, 100] },
+  // { pos: [50, 147] },
+  // { pos: [110, 147] },
+  // { pos: [140, 147] },
+  // { pos: [140, 118] },
+  // { pos: [140, 90] },
+  // { pos: [110, 90] },
+  { pos: [80, 60] },
   { pos: [80, 90] },
-  { pos: [50, 90] },
-  { pos: [20, 90] },
-  { pos: [20, 119] },
-  { pos: [20, 147] },
-  { pos: [172, 118] },
-  { pos: [297, 147] },
-  { pos: [204, 118] },
-  { pos: [204, 146] },
-  { pos: [235, 118] },
-  { pos: [235, 91] },
-  { pos: [235, 63] },
-  { pos: [513, 63] },
-  { pos: [297, 176] },
-  { pos: [330, 147] },
-  { pos: [360, 147] },
-  { pos: [390, 147] },
-  { pos: [420, 147] },
-  { pos: [420, 121] },
-  { pos: [450, 121] },
-  { pos: [482, 121] },
-  { pos: [513, 121] },
-  { pos: [513, 92] },
-  { pos: [420, 96] },
-  { pos: [390, 96] },
-  { pos: [360, 96] },
-  { pos: [360, 176] },
-  { pos: [297, 118] },
-  { pos: [297, 91] },
-  { pos: [265, 91] }
+  { pos: [80, 119] },
+
+  // { pos: [50, 90] },
+  // { pos: [20, 90] },
+  // { pos: [20, 119] },
+  // { pos: [20, 147] },
+  // { pos: [172, 118] },
+  // { pos: [297, 147] },
+  // { pos: [204, 118] },
+  // { pos: [204, 146] },
+  // { pos: [235, 118] },
+  // { pos: [235, 91] },
+  // { pos: [235, 63] },
+  { pos: [513, 155] },
+  // { pos: [330, 147] },
+  // { pos: [360, 147] },
+  // { pos: [390, 147] },
+  // { pos: [420, 147] },
+  // { pos: [420, 121] },
+  // { pos: [450, 121] },
+  // { pos: [482, 121] },
+  { pos: [513, 100] },
+  { pos: [513, 60] },
+  { pos: [513, 90] },
+  { pos: [513, 119] },
+  
+  // { pos: [420, 96] },
+  // { pos: [390, 96] },
+  // { pos: [360, 96] },
+  // { pos: [360, 176] },
+
+  { pos: [297, 155] },
+  { pos: [297, 100] },
+  { pos: [297, 60] },
+  { pos: [297, 90] },
+  { pos: [297, 119] },
+
+  // { pos: [265, 91] }
 ]
 
 let rocksArr = [];
@@ -310,11 +322,11 @@ function draw(){
   // wolf1.moveSprite(-2, 0, canvas);
   // wolf2.moveSprite(-2, 0, canvas);
   // wolf3.moveSprite(-2, 0, canvas);
-  bullet1.moveSprite(5,0,canvas);
-  bullet2.moveSprite(3, 0, canvas);
-  bullet3.moveSprite(5, 0, canvas);
-  bullet4.moveSprite(5, 0, canvas);
-  bullet5.moveSprite(5, 0, canvas);
+  // bullet1.moveSprite(5,0,canvas);
+  // bullet2.moveSprite(3, 0, canvas);
+  // bullet3.moveSprite(5, 0, canvas);
+  // bullet4.moveSprite(5, 0, canvas);
+  // bullet5.moveSprite(5, 0, canvas);
   // bulletImage.moveSprite(-2, 0, canvas);
   // rock.moveSprite(2,0, canvas);
   // middlerock.moveSprite(-2,0,canvas);
@@ -322,6 +334,7 @@ function draw(){
   renderRocks();
   drawChar();
   collision();
+  lavaCollision();
   requestAnimationFrame(draw)
   if (isDead) {
     isDead = false;

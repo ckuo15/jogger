@@ -4,8 +4,8 @@ class Rock {
     this.dy = 0;
     this.posX = rock.pos[0];
     this.posY = rock.pos[1];
-    this.height = 35;
-    this.width = 35;
+    this.height = 55;
+    this.width = 55;
     this.hazardous = false;
     this.ctx = ctx;
     this.src = "./dist/Dungeon_B.png"
@@ -14,7 +14,10 @@ class Rock {
   render() {
     let rockImage = new Image(); 
     rockImage.src = "./dist/Dungeon_B.png";
-    this.ctx.drawImage(rockImage, 480, 100, 45, 40, this.posX, this.posY, this.height, this.width)
+    this.ctx.drawImage(rockImage, 482, 100, 45, 40, this.posX, this.posY, this.width, this.height)
+    // this.ctx.beginPath();
+    // this.ctx.rect(this.posX, this.posY, 55, 55);
+    // this.ctx.stroke();
   }
 
   // moveSprite(dx, dy, canvas) {
