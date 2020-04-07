@@ -1,31 +1,90 @@
-body {
-  display: flex;
-  justify-content: center;
-  background: black;
-  margin-top: 100px;
-}
-
-.right{
+.game-container{
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+body{
+  background-image: url("../dist/b8.jpg");
+  background-size: cover;
+}
+
+
+.middle{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.middle canvas{
+  border: 10px solid black;
+}
+
+.description{
+  width: 150px;
+  margin-left: 20px;
+  background-color: rgba(255, 255, 255, 0.466);
+  padding: 10px;
+  font-weight: bold;
 }
 
 .title{
-  width: 50px;
-  background: yellow;
-  border: 1px solid yellow;
+  width: 70px;
+  background: rgba(255, 255, 255, 0.39);
   border-radius: 50%;
   padding: 20px;
   text-align: center;
   display: flex;
-}
-
-.description{
-  background: white;
-  padding: 10px;
-  width: 150px;
+  justify-content: center;
 }
 
 .middle-right{
-  background: white;
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
 }
+
+.bottom{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.39);
+  width: 40px;
+  margin-left: 80px;
+  margin-top: 50px;
+}
+
+.fa-linkedin{
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.fa-github-square{
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.fa-user-alt{
+  font-size: 20px;
+  cursor: pointer;
+
+}
+
+.fa-angellist{
+  font-size: 20px;
+  cursor: pointer;
+
+}
+
+.button{
+  height: 50px;
+  width: 50px;
+}
+
+
+
+
+
+

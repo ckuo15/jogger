@@ -11,8 +11,9 @@ let canvas = document.createElement("canvas"); canvas.className="canvas";
 let ctx = canvas.getContext("2d");
 
 canvas.width = 600; //385
-canvas.height = 600; //100
-document.body.appendChild(canvas);
+canvas.height = 503; //100
+let mid = document.getElementById("mid")
+mid.appendChild(canvas);
 
 
 let enemies= [];
@@ -123,7 +124,6 @@ function lavaCollision(){
   let charLeft = char.posX;
   let charBottom = char.posY;
   let charRight = charLeft + char.width-10;
-  let charTop = charBottom + char.height;
   
   if (charBottom > 63 && charBottom < 176){
     if (charLeft > 80 && charRight < 135 || charLeft > 297 && charRight < 352 || charLeft > 513 && charRight < 568 ){
@@ -135,6 +135,7 @@ function lavaCollision(){
 
 function gameOver(){
   isDead = true;
+  
 };
 
 function gameWon(){
