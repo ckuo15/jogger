@@ -1,3 +1,5 @@
+
+
 .game-container{
   display: flex;
   flex-direction: column;
@@ -12,6 +14,14 @@ body{
   font-family: 'IM Fell French Canon SC', serif;
 }
 
+.second-half{
+  background: rgba(255, 255, 255, 0.562);
+  display:flex;
+  flex-direction: column;
+  width: 800px;
+  height: 520px;
+}
+
 .middle{
   display: flex;
   justify-content: center;
@@ -24,8 +34,8 @@ body{
 
 .description{
   width: 150px;
-  margin-left: 20px;
-  background-color: rgba(255, 255, 255, 0.466);
+  margin-left: 10px;
+  background-color: rgba(235, 220, 220, 0.466);
   padding: 10px;
   font-weight: bold;
 }
@@ -52,16 +62,20 @@ body{
   justify-content: center;
   background-color: rgba(255, 255, 255, 0.199);
   width: 40px;
-  margin-left: 80px;
+  margin-left: 65px;
   margin-top: 20px;
 }
 
-.fa-linkedin{
+.fa-linkedin, .fa-github-square, .fa-user-alt, .fa-angellist{
   font-size: 30px;
   cursor: pointer;
 }
 
-.fa-github-square{
+.button:hover{
+  background-color: rgba(168, 168, 168, 0.849);
+  cursor: pointer;
+}
+/* .fa-github-square{
   font-size: 30px;
   cursor: pointer;
 }
@@ -76,7 +90,7 @@ body{
   font-size: 30px;
   cursor: pointer;
 
-}
+} */
 
 .button{
   height: 50px;
@@ -84,9 +98,11 @@ body{
 }
 
 .footer{
-  background: rgba(255, 255, 255, 0.63);
+  background-color: rgba(255, 255, 255, 0.747);
   padding: 5px;
+  text-align: center;
 }
+
 
 .fa-copyright{
   margin-right: 5px;

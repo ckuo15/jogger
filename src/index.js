@@ -154,16 +154,18 @@ function gameWon(){
 // an array for all the rocks. 
 
 function drawChar(){
-  ctx.drawImage(wolfImage, 5, 10, 120, 60, wolf1.posX, wolf1.posY, 90, 50)
-  ctx.drawImage(wolfImage, 5, 10, 120, 60, wolf2.posX, wolf2.posY, 90, 50)
-  ctx.drawImage(wolfImage, 5, 10, 120, 60, wolf3.posX, wolf3.posY, 90, 50)
+  ctx.drawImage(wolfImage, 5, 10, 120, 60, wolf1.posX, wolf1.posY, 83, 50)
+  ctx.drawImage(wolfImage, 5, 10, 120, 60, wolf2.posX, wolf2.posY, 83, 50)
+  ctx.drawImage(wolfImage, 5, 10, 120, 60, wolf3.posX, wolf3.posY, 83, 50)
   ctx.drawImage(antImage, 0, 0, 30, 20, ant1.posX, ant1.posY, 60, 50)
   ctx.drawImage(antImage, 0, 0, 30, 20, ant2.posX, ant2.posY, 60, 50)
   ctx.drawImage(antImage, 0, 0, 30, 20, ant3.posX, ant3.posY, 60, 50)
   ctx.drawImage(bowserImage, 5, 90, 80, 80, bowser1.posX, bowser1.posY, 60, 50)
   ctx.drawImage(bowserImage, 5, 90, 80, 80, bowser2.posX, bowser2.posY, 60, 50)
   ctx.drawImage(bowserImage, 5, 90, 80, 80, bowser3.posX, bowser3.posY, 60, 50)
-
+  // ctx.beginPath();
+  // ctx.rect(wolf1.posX, wolf1.posY, 83, 50);
+  // ctx.stroke();
 
   //terrain data
   

@@ -4,7 +4,7 @@ class Wolf {
     this.dy = 0;
     this.posX = posX;
     this.posY = 285;
-    this.width = 90;
+    this.width = 83;
     this.height = 50;
   }
 
