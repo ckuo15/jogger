@@ -9,8 +9,8 @@
 body{
   background-image: url("../dist/b8.jpg");
   background-size: cover;
+  font-family: 'IM Fell French Canon SC', serif;
 }
-
 
 .middle{
   display: flex;
@@ -31,13 +31,14 @@ body{
 }
 
 .title{
-  width: 70px;
-  background: rgba(255, 255, 255, 0.39);
+  width: 90px;
+  /* background: rgba(255, 255, 255, 0.596);
   border-radius: 50%;
-  padding: 20px;
-  text-align: center;
+  padding: 20px; */
+  border-radius: 50%;
   display: flex;
   justify-content: center;
+  align-content: center;
 }
 
 .middle-right{
@@ -50,30 +51,30 @@ body{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: rgba(255, 255, 255, 0.39);
+  background-color: rgba(255, 255, 255, 0.199);
   width: 40px;
   margin-left: 80px;
-  margin-top: 50px;
+  margin-top: 20px;
 }
 
 .fa-linkedin{
-  font-size: 20px;
+  font-size: 30px;
   cursor: pointer;
 }
 
 .fa-github-square{
-  font-size: 20px;
+  font-size: 30px;
   cursor: pointer;
 }
 
 .fa-user-alt{
-  font-size: 20px;
+  font-size: 30px;
   cursor: pointer;
 
 }
 
 .fa-angellist{
-  font-size: 20px;
+  font-size: 30px;
   cursor: pointer;
 
 }
@@ -83,8 +84,16 @@ body{
   width: 50px;
 }
 
+.footer{
+  background: rgba(255, 255, 255, 0.63);
+  padding: 5px;
+}
 
-
+.fa-copyright{
+  margin-right: 5px;
+  margin-left: 5px;
+  font-size: 12px;
+}
 
 
 
