@@ -9,12 +9,21 @@ import bullet from "./bullet";
 
 let canvas = document.createElement("canvas"); canvas.className="canvas";
 let ctx = canvas.getContext("2d");
+document.addEventListener("DOMContentLoaded", e => {
+  let startButton = document.getElementById("start");
+  let menu = document.getElementById("menu");
+  canvas.classList.add("hidden");
+  startButton.addEventListener("click", e => {
+    e.preventDefault();
+    canvas.classList.remove("hidden");
+    menu.classList.add("hidden");
+  })
+})
 
 canvas.width = 600; //385
 canvas.height = 503; //100
 let mid = document.getElementById("mid")
 mid.appendChild(canvas);
-
 
 let enemies= [];
 let isDead = false;
