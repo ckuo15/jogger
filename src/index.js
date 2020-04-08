@@ -24,12 +24,14 @@ document.addEventListener("DOMContentLoaded", e => {
     e.preventDefault();
     let gameoverModal = document.getElementById("gameover");
     gameoverModal.classList.add("hidden");
+    requestAnimationFrame(draw)
     populate(); 
   })
   replayButton.addEventListener("click", e => {
     e.preventDefault();
     let gamewonModal = document.getElementById("gamewon");
     gamewonModal.classList.add("hidden");
+    requestAnimationFrame(draw)
     populate();
   })
 })
@@ -225,7 +227,6 @@ function renderRocks() {
     rock.render();
   })
 }
-
 function draw(){
   ctx.clearRect(0,0, canvas.width, canvas.height);
   char.moveSprite(4, 4, canvas);
@@ -249,10 +250,14 @@ function draw(){
   collision();
   lavaCollision();
   gameWon();
-  requestAnimationFrame(draw)
   if (isDead) {
     isDead = false;
     populate();
+  } else if (hasWon){
+    hasWon = false;
+    populate();
+  }else {
+    requestAnimationFrame(draw)
   }
   // if (isDead) {
   //   isDead = false;
