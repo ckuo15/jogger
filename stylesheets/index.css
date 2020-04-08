@@ -103,22 +103,6 @@ body{
   background-color: rgba(168, 168, 168, 0.849);
   cursor: pointer;
 }
-/* .fa-github-square{
-  font-size: 30px;
-  cursor: pointer;
-}
-
-.fa-user-alt{
-  font-size: 30px;
-  cursor: pointer;
-
-}
-
-.fa-angellist{
-  font-size: 30px;
-  cursor: pointer;
-
-} */
 
 .button{
   height: 50px;
@@ -138,5 +122,56 @@ body{
   font-size: 12px;
 }
 
+.gameoverModal, .gamewonModal{
+  position: fixed; 
+  z-index: 1; 
+  left: 430px;
+  top: 250px;
+  width: 400px; 
+  height: 303px; 
+  overflow: auto; 
+  background-color: rgb(255, 255, 255); 
+  background-image: url("../dist/b4.jpg");
+  background-size: cover;
+}
 
+.retryButton{
+  position: absolute;
+  left: 39%;
+  top: 45%;
+  background-color: rgb(0, 0, 0);
+  border: none;
+  color: white;
+  padding: 10px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  font-family: 'IM Fell French Canon SC', serif;
+
+}
+
+ .replayButton{
+   position: absolute;
+  left: 33%;
+  top: 45%;
+  background-color: rgb(0, 0, 0);
+  border: none;
+  color: white;
+  padding: 10px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  font-family: 'IM Fell French Canon SC', serif;
+ }
+
+.dieMessage{
+  text-align: center;
+  margin-top: 80px;
+  color: white;
+  font-weight: bold;
+}
 
