@@ -88,26 +88,22 @@ body{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: rgba(255, 255, 255, 0.199);
   width: 40px;
   margin-left: 65px;
   margin-top: 20px;
 }
 
 .fa-linkedin, .fa-github-square, .fa-user-alt, .fa-angellist{
-  font-size: 30px;
+  font-size: 35px;
   cursor: pointer;
+  margin-bottom: 15px;
+  color: black;
 }
 
-.button:hover{
-  background-color: rgba(168, 168, 168, 0.849);
-  cursor: pointer;
+.fa-linkedin:hover, .fa-github-square:hover, .fa-user-alt:hover, .fa-angellist:hover{
+    color: rgb(67, 67, 226);
 }
 
-.button{
-  height: 50px;
-  width: 50px;
-}
 
 .footer{
   background-color: rgba(255, 255, 255, 0.747);
